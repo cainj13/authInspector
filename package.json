@@ -1,0 +1,13 @@
+{
+  "title": "Auth Inspector",
+  "name": "authinspector",
+  "version": "1.0.0-SNAPSHOT",
+  "description": "Allows for debugging of commonly used authn and authz protocols",
+  "main": "index.js",
+  "author": "Josh Cain",
+  "engines": {
+    "firefox": ">=38.0a1",
+    "fennec": ">=38.0a1"
+  },
+  "license": "GNU GPL"
+}
