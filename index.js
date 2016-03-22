@@ -48,3 +48,16 @@ text_entry.port.on("text-entered", function (text) {
   console.log(text);
   text_entry.hide();
 });
+
+// This is the listener stuff!
+
+var events = require("sdk/system/events");
+var { Ci } = require("chrome");
+
+function listener(event) {
+  var channel = event.subject.QueryInterface(Ci.nsIHttpChannel);
+  channel.setRequestHeader("User-Agent", "MyBrowser/1.0", false);
+  console.log("Setting userAgent to MyBrowser");
+}
+
+events.on("http-on-modify-request", listener);
