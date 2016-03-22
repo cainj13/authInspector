@@ -4,6 +4,13 @@ var data = require("sdk/self").data;
 var buttons = require('sdk/ui/button/action');
 var tabs = require('sdk/tabs');
 
+// replace page content with content script
+function setText(state) {
+  tabs.activeTab.attach({
+  contentScript: 'document.body.innerHTML = "<h1>this page has been eaten</h1>";'
+  });
+}
+
 // Create a panel for displaying text
 var text_entry = require("sdk/panel").Panel({
   contentURL: data.url("text-entry.html"),
@@ -19,12 +26,17 @@ var button = buttons.ActionButton({
     "64": "./icon-64.png"
   },
   //onClick: openGithubTab
-  onClick: showText
+  //onClick: showText
+  onClick: setText 
 })
 
 // demonstrates how to open a link
 function openGithubTab(state) {
     tabs.open("https://github.com/cainj13/authInspector");
+}
+
+function openHttpEventsTab(state) {
+    tabs.open("chrome://authinspector/content/httpEvents.html");
 }
 
 // Show the panel when the user clicks the button.
