@@ -23,7 +23,7 @@ function listener(event) {
   channel.setRequestHeader("User-Agent", "MyBrowser/1.0", false);
   console.log("Setting userAgent to MyBrowser");
   console.log(event);
-  console.log("requestMethod: " + event.subject.getRequestMethod);
+  console.log("requestMethod: " + event.subject.requestMethod);
   console.log("URI.asciiSpec: " + event.subject.URI.asciiSpec);
   console.log("host: " + event.subject.URI.host);
   console.log("hostPot: " + event.subject.URI.hostPort);
