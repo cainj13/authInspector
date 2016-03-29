@@ -1,12 +1,12 @@
 {
 
   "manifest_version": 2,
-  "name": "Borderify",
+  "name": "Auth Inspector",
   "version": "1.0",
  
-  "description": "Adds a solid red border to all webpages matching mozilla.org.",
+  "description": "Tool for observing and altering authentication and authorization traffic.",
   "icons": {
-    "48": "icons/border-48.png"
+    "48": "icons/ai-48.png"
   },
 
   "applications": {
@@ -21,6 +21,12 @@
       "matches": ["*://*.mozilla.org/*"],
       "js": ["borderify.js"]
     }
-  ]
+  ],
+  
+  "browser_action": {
+    "default_icon": "icons/ai-48.png",
+    "default_title": "AuthInspector",
+    "default_popup": "ui/background-page.html"
+  }
 
 }
